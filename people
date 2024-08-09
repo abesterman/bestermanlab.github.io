@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Besterman Lab - People</title>
+    <style>
+        /* Copy the same style from index.html */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* ... (include all other styles from index.html) ... */
+        
+        /* Additional styles for the people page */
+        .person {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+        .person img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Besterman Lab</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Our Team</h2>
+        <div class="person">
+            <h3>Dr. Aaron Besterman</h3>
+            <img src="/api/placeholder/150/150" alt="Dr. Jane Besterman">
+            <p>Principal Investigator</p>
+            <p>Dr. Besterman leads our lab in [research area]. Her work focuses on [specific interests].</p>
+        </div>
+        <div class="person">
+            <h3>Dr. John Doe</h3>
+            <img src="/api/placeholder/150/150" alt="Dr. John Doe">
+            <p>Postdoctoral Researcher</p>
+            <p>Dr. Doe's research involves [brief description of research].</p>
+        </div>
+        <!-- Add more team members as needed -->
+    </main>
+    <footer>
+        <p>&copy; 2024 Besterman Lab. All rights reserved.</p>
+    </footer>
+</body>
+</html>
