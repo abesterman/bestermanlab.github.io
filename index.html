@@ -5,69 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Besterman Lab</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            height: 100%;
         }
-        header {
-            background-color: #35424a;
-            color: #ffffff;
-            padding: 1rem;
-            text-align: center;
+        .container {
+            display: flex;
+            min-height: 100vh;
         }
-        nav {
-            background-color: #2c3e50;
-            padding: 0.5rem;
+        .sidebar {
+            width: 250px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
         }
-        nav ul {
+        .sidebar h2 {
+            color: #1e5288;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .sidebar ul {
             list-style-type: none;
             padding: 0;
         }
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
+        .sidebar ul li {
+            margin-bottom: 10px;
         }
-        nav ul li a {
-            color: #ffffff;
+        .sidebar ul li a {
+            color: #333;
             text-decoration: none;
         }
-        main {
+        .main-content {
+            flex-grow: 1;
             padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            background-color: #ffffff;
+            background-color: #fff;
+        }
+        .main-content h1 {
+            color: #1e5288;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .image-slider {
+            width: 100%;
+            height: 400px;
+            background-color: #ddd;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .image-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slider-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .slider-controls span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
         }
         footer {
-            background-color: #35424a;
+            background-color: #1e5288;
             color: #ffffff;
             text-align: center;
             padding: 1rem;
-            position: fixed;
-            bottom: 0;
             width: 100%;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Besterman Lab</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="people.html">People</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="projects.html">Projects</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h2>Welcome to the Besterman Lab</h2>
-        <p>The Besterman Lab is dedicated to [brief description of lab's focus and research areas]. Our team of researchers is committed to [lab's mission or goals].</p>
-        <p>Explore our website to learn more about our team members, ongoing projects, and published works.</p>
-    </main>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Besterman Lab</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>Besterman Lab</h1>
+            <div class="image-slider">
+                <img src="/api/placeholder/800/400" alt="Lab photo">
+                <div class="slider-controls">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <h2>Welcome to the Besterman Lab</h2>
+            <p>The Besterman Lab is dedicated to [brief description of lab's focus and research areas]. Our team of researchers is committed to [lab's mission or goals].</p>
+            <p>Explore our website to learn more about our team members, ongoing projects, and published works.</p>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2024 Besterman Lab. All rights reserved.</p>
     </footer>
