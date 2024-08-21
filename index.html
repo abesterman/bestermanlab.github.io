@@ -79,33 +79,21 @@
             margin-top: 0;
             margin-bottom: 20px;
         }
-        .image-slider {
+        .main-image {
             width: 100%;
-            height: 400px;
-            background-color: #ddd;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        .image-slider img {
-            width: 100%;
-            height: 100%;
+            max-height: 400px;
             object-fit: cover;
+            margin-bottom: 20px;
         }
-        .slider-controls {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
         }
-        .slider-controls span {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
+        .logo {
+            width: 30%;
+            max-height: 100px;
+            object-fit: contain;
         }
         footer {
             background-color: #1e5288;
@@ -133,16 +121,14 @@
         <div class="main-content">
             <h1>Besterman Lab</h1>
             <h2>Pediatric Mental Health Innovations</h2>
-            <div class="image-slider">
-                <img src="/api/placeholder/800/400" alt="Lab photo">
-                <div class="slider-controls">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+            <img src="images/childmind.jpg" alt="Child Mind Institute" class="main-image">
             <h3>Welcome to the Besterman Lab</h3>
-            <p>The Besterman Lab is dedicated to leveraging genomics and other related technologies to better understand and treat pediatric mental health conditions.</p>         
+            <p>The Besterman Lab is dedicated to leveraging genomics and other related technologies to better understand and treat pediatric mental health conditions.</p>
+            <div class="logo-container">
+                <img src="images/ucsdsom.png" alt="UCSD School of Medicine" class="logo">
+                <img src="images/RCIGMlogo.png" alt="RCIGM Logo" class="logo">
+                <img src="images/rchsdlogo.png" alt="RCHSD Logo" class="logo">
+            </div>
         </div>
     </div>
     <footer>
