@@ -88,10 +88,21 @@
             margin-top: 0;
             margin-bottom: 20px;
         }
-        .main-image {
+        .main-image-container {
             width: 100%;
-            max-height: 400px;
-            object-fit: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .main-image {
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+        }
+        .main-text {
+            font-size: 1.17em; /* This is typically the size of an h3 element */
+            line-height: 1.5;
             margin-bottom: 20px;
         }
         .logo-container {
@@ -133,9 +144,10 @@
             <div>
                 <h1>Besterman Lab</h1>
                 <h2>Pediatric Mental Health Innovations</h2>
-                <img src="images/childmind.jpg" alt="Child Mind Institute" class="main-image">
-                <h3>Welcome to the Besterman Lab</h3>
-                <p>The Besterman Lab is dedicated to leveraging genomics and other related technologies to better understand and treat pediatric mental health conditions.</p>
+                <div class="main-image-container">
+                    <img src="images/head.jpg" alt="Artistic representation of a human head" class="main-image">
+                </div>
+                <p class="main-text">The Besterman Lab is dedicated to leveraging genomics and other related technologies to better understand and treat pediatric mental health conditions.</p>
             </div>
             <div class="logo-container">
                 <img src="images/ucsdsom.png" alt="UCSD School of Medicine" class="logo">
