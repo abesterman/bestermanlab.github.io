@@ -1,1 +1,156 @@
-Pending
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Besterman Lab - Studies</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f0f0f0;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/helix.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        .sidebar-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+        .sidebar ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 21.84px;
+            font-weight: bold;
+            display: block;
+            padding: 5px 0;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+        .main-content h1 {
+            color: #1e5288;
+            font-size: 2.5em;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .study {
+            margin-bottom: 30px;
+        }
+        .study h2 {
+            color: #1e5288;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .study p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        footer {
+            background-color: #1e5288;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="studies.html">Studies</a></li>
+                    <li><a href="code.html">Data</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>Our Studies</h1>
+            
+            <div class="study">
+                <h2>Mental Health Crises in Youth with Intellectual and Developmental Disabilities</h2>
+                <p>[Description of the study goes here. Explain the objectives, methods, and potential impact of this research on youth with intellectual and developmental disabilities.]</p>
+            </div>
+
+            <div class="study">
+                <h2>Multi-omics of Early-Onset Psychosis</h2>
+                <p>[Description of the study goes here. Discuss the multi-omics approach, its application to early-onset psychosis, and the potential insights this research might provide.]</p>
+            </div>
+
+            <div class="study">
+                <h2>Immunogenomics of Pediatric Catatonia</h2>
+                <p>[Description of the study goes here. Explain the focus on immunogenomics, its relevance to pediatric catatonia, and the potential implications for diagnosis and treatment.]</p>
+            </div>
+
+            <div class="study">
+                <h2>Feasibility of Wearable Devices in Autism Spectrum Disorders</h2>
+                <p>[Description of the study goes here. Discuss the potential benefits and challenges of using wearable devices in autism spectrum disorders, and the goals of this feasibility study.]</p>
+            </div>
+
+            <div class="study">
+                <h2>The Microbiome in Adolescent Antidepressant Treatment Response</h2>
+                <p>[Description of the study goes here. Explain the role of the microbiome in mental health, the focus on adolescent antidepressant treatment response, and the potential implications of this research.]</p>
+            </div>
+
+            <div class="study">
+                <h2>Clinical Legal and Ethical Considerations in Pediatric Threat Assessment</h2>
+                <p>[Description of the study goes here. Discuss the complex intersection of clinical, legal, and ethical issues in pediatric threat assessment, and the goals of this research in informing best practices.]</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Besterman Lab. All rights reserved.</p>
+    </footer>
+</body>
+</html>
