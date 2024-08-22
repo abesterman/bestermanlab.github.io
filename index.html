@@ -32,7 +32,7 @@
             background-image: url('images/helix.webp');
             background-size: cover;
             background-position: center;
-            opacity: 0.1; /* 90% translucent */
+            opacity: 0.1;
             z-index: 1;
         }
         .sidebar-content {
@@ -92,17 +92,18 @@
             width: 100%;
             display: flex;
             justify-content: flex-start;
-            align-items: center;
+            align-items: stretch;
             margin-bottom: 20px;
-            gap: 20px; /* This creates space between the images */
+            gap: 20px;
+            height: 400px; /* Set a fixed height for the container */
         }
         .main-image {
-            max-width: calc(50% - 10px); /* Subtracting half of the gap to ensure both images fit */
-            max-height: 500px;
+            max-width: calc(50% - 10px);
+            height: 100%;
             object-fit: contain;
         }
         .main-text {
-            font-size: 1.17em; /* This is typically the size of an h3 element */
+            font-size: 1.17em;
             line-height: 1.5;
             margin-bottom: 20px;
         }
