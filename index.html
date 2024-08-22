@@ -92,15 +92,14 @@
             width: 100%;
             display: flex;
             justify-content: flex-start;
-            align-items: stretch;
+            align-items: center;
             margin-bottom: 20px;
             gap: 20px;
-            height: 400px; /* Set a fixed height for the container */
         }
         .main-image {
-            max-width: calc(50% - 10px);
-            height: 100%;
-            object-fit: contain;
+            width: calc(50% - 10px);
+            height: 400px; /* Set a fixed height for both images */
+            object-fit: cover; /* This will crop the image if necessary to maintain aspect ratio */
         }
         .main-text {
             font-size: 1.17em;
@@ -153,7 +152,7 @@
                 <h2>Innovations in Pediatric Mental Health Diagnosis and Treatment</h2>
                 <div class="main-image-container">
                     <img src="images/head.jpg" alt="Artistic representation of a human head" class="main-image">
-                    <img src="images/cloud.png" alt="Word cloud of psychiatric terms" class="main-image">
+                    <img src="images/cloud2.jpg" alt="Word cloud of psychiatric terms" class="main-image">
                 </div>
                 <p class="main-text">We are dedicated to leveraging genomics and other cutting-edge technologies to better understand and treat severe pediatric mental health conditions</p>
             </div>
