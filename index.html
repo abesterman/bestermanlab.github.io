@@ -94,9 +94,10 @@
             justify-content: flex-start;
             align-items: center;
             margin-bottom: 20px;
+            gap: 20px; /* This creates space between the images */
         }
         .main-image {
-            max-width: 100%;
+            max-width: calc(50% - 10px); /* Subtracting half of the gap to ensure both images fit */
             max-height: 500px;
             object-fit: contain;
         }
@@ -151,6 +152,7 @@
                 <h2>Innovations in Pediatric Mental Health Diagnosis and Treatment</h2>
                 <div class="main-image-container">
                     <img src="images/head.jpg" alt="Artistic representation of a human head" class="main-image">
+                    <img src="images/cloud.png" alt="Word cloud of psychiatric terms" class="main-image">
                 </div>
                 <p class="main-text">We are dedicated to leveraging genomics and other cutting-edge technologies to better understand and treat severe pediatric mental health conditions</p>
             </div>
