@@ -3,58 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Besterman Lab - People</title>
+    <title>Team - Besterman Lab</title>
     <style>
-        /* Copy the same style from index.html */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            height: 100%;
         }
-        /* ... (include all other styles from index.html) ... */
-        
-        /* Additional styles for the people page */
-        .person {
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f0f0f0;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/helix.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        .sidebar-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+        .sidebar ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 21.84px;
+            font-weight: bold;
+            display: block;
+            padding: 5px 0;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+        .main-content h1 {
+            color: #1e5288;
+            font-size: 2.5em;
+            margin-top: 0;
             margin-bottom: 20px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
         }
-        .person img {
-            max-width: 150px;
-            border-radius: 50%;
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #1e5288;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #1e5288;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Besterman Lab</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="publications.html">Publications</a></li>
-            <li><a href="projects.html">Projects</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h2>Our Team</h2>
-        <div class="person">
-            <h3>Dr. Aaron Besterman</h3>
-            <img src="/api/placeholder/150/150" alt="Dr. Aaron Besterman">
-            <p>Principal Investigator</p>
-            <p>Dr. Besterman leads our lab in [research area]. Her work focuses on [specific interests].</p>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="studies.html">Studies</a></li>
+                    <li><a href="code.html">Data</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="person">
-            <h3>Dr. John Doe</h3>
-            <img src="/api/placeholder/150/150" alt="Dr. John Doe">
-            <p>Postdoctoral Researcher</p>
-            <p>Dr. Doe's research involves [brief description of research].</p>
+        <div class="main-content">
+            <h1>Team</h1>
+            <div class="section" id="principal-investigator">
+                <h2>Principal Investigator</h2>
+                <!-- Content for Principal Investigator goes here -->
+            </div>
+            <div class="section" id="clinical-research-coordinators">
+                <h2>Clinical Research Coordinators</h2>
+                <!-- Content for Clinical Research Coordinators goes here -->
+            </div>
+            <div class="section" id="current-students">
+                <h2>Current Students</h2>
+                <!-- Content for Current Students goes here -->
+            </div>
+            <div class="section" id="alumni">
+                <h2>Alumni</h2>
+                <!-- Content for Alumni goes here -->
+            </div>
         </div>
-        <!-- Add more team members as needed -->
-    </main>
+    </div>
     <footer>
         <p>&copy; 2024 Besterman Lab. All rights reserved.</p>
     </footer>
