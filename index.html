@@ -74,7 +74,6 @@
             background-color: #fff;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
         .main-content h1 {
             color: #1e5288;
@@ -129,25 +128,20 @@
             color: #1e5288;
             font-weight: bold;
         }
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 20px;
-            gap: 30px;
-        }
-        .logo {
-            width: 40%;
-            max-height: 120px;
-            object-fit: contain;
-        }
         footer {
             background-color: #1e5288;
             color: #ffffff;
             text-align: center;
             padding: 1rem;
             width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo {
+            height: 40px;
+            object-fit: contain;
         }
     </style>
 </head>
@@ -182,15 +176,12 @@
                 </div>
                 <p class="main-text">We push the boundaries of genomic science and other emerging technologies to transform our understanding and treatment of severe pediatric mental health disorders</p>
             </div>
-            <div class="logo-container">
-                <img src="images/ucsdsom.png" alt="UCSD School of Medicine" class="logo">
-                <img src="images/RCIGMlogo.png" alt="RCIGM Logo" class="logo">
-                <img src="images/rchsdlogo.png" alt="RCHSD Logo" class="logo">
-            </div>
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 Besterman Lab. All rights reserved.</p>
+        <img src="images/ucsdsom.png" alt="UCSD School of Medicine" class="logo">
+        <img src="images/RCIGMlogo.png" alt="RCIGM Logo" class="logo">
+        <img src="images/rchsdlogo.png" alt="RCHSD Logo" class="logo">
     </footer>
     <script>
         const images = document.querySelectorAll('.carousel-image');
