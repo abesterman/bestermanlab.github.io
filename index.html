@@ -10,17 +10,21 @@
             padding: 0;
             font-family: Arial, sans-serif;
             height: 100%;
+            overflow: hidden;
         }
         .container {
             display: flex;
-            min-height: 100vh;
+            height: 100vh;
         }
         .sidebar {
             width: 250px;
             background-color: #f0f0f0;
             box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
         }
         .sidebar::before {
             content: "";
@@ -72,8 +76,9 @@
             flex-grow: 1;
             padding: 20px;
             background-color: #fff;
-            display: flex;
-            flex-direction: column;
+            margin-left: 250px;
+            overflow-y: auto;
+            height: 100vh;
         }
         .main-content h1 {
             color: #1e5288;
@@ -86,7 +91,7 @@
             font-size: 1.5em;
             margin-top: 0;
             margin-bottom: 20px;
-            padding-top: 0.5in; /* Added 0.5 inch of padding above the subtitle */
+            padding-top: 0.5in;
         }
         .image-container {
             display: flex;
@@ -94,7 +99,7 @@
             width: 100%;
             height: 400px;
             margin-bottom: 20px;
-            padding-top: 0.5in; /* Added 0.5 inch of padding above the subtitle */
+            padding-top: 0.5in;
         }
         .carousel {
             width: 48%;
@@ -135,11 +140,8 @@
             color: #ffffff;
             text-align: center;
             padding: 1rem;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+            width: calc(100% - 250px);
+            margin-left: 250px;
         }
     </style>
 </head>
@@ -158,22 +160,20 @@
             </div>
         </div>
         <div class="main-content">
-            <div>
-                <h1>Besterman Lab</h1>
-                <h2>Innovations in Pediatric Mental Health Diagnosis and Treatment</h2>
-                <div class="image-container">
-                    <div class="word-cloud">
-                        <img src="images/word-cloud2.png" alt="Word Cloud">
-                    </div>
-                    <div class="carousel">
-                        <img src="images/nicole.png" alt="Nicole" class="carousel-image active">
-                        <img src="images/rfx3.png" alt="RFX3" class="carousel-image">
-                        <img src="images/sksprotein.png" alt="SKS Protein" class="carousel-image">
-                        <img src="images/catatoniaflow.png" alt="Catatonia Flow" class="carousel-image">
-                    </div>
+            <h1>Besterman Lab</h1>
+            <h2>Innovations in Pediatric Mental Health Diagnosis and Treatment</h2>
+            <div class="image-container">
+                <div class="word-cloud">
+                    <img src="images/word-cloud2.png" alt="Word Cloud">
                 </div>
-                <p class="main-text">We push the boundaries of genomic science and other emerging technologies to transform our understanding and treatment of severe pediatric mental health disorders</p>
+                <div class="carousel">
+                    <img src="images/nicole.png" alt="Nicole" class="carousel-image active">
+                    <img src="images/rfx3.png" alt="RFX3" class="carousel-image">
+                    <img src="images/sksprotein.png" alt="SKS Protein" class="carousel-image">
+                    <img src="images/catatoniaflow.png" alt="Catatonia Flow" class="carousel-image">
+                </div>
             </div>
+            <p class="main-text">We push the boundaries of genomic science and other emerging technologies to transform our understanding and treatment of severe pediatric mental health disorders</p>
         </div>
     </div>
     <footer>
