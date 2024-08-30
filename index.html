@@ -9,24 +9,23 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            height: 100%;
-            overflow: hidden;
+            overflow: auto;
         }
         .page-container {
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            min-height: 100vh;
         }
         .content-wrap {
             flex: 1;
             display: flex;
-            overflow: hidden;
         }
         .sidebar {
             width: 250px;
             background-color: #f0f0f0;
             box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-            position: relative;
+            position: fixed;
+            height: 100vh;
             overflow-y: auto;
         }
         .sidebar::before {
@@ -80,6 +79,7 @@
             padding: 20px;
             background-color: #fff;
             overflow-y: auto;
+            margin-left: 250px; /* Equal to the width of the sidebar */
         }
         .main-content h1 {
             color: #1e5288;
@@ -147,22 +147,22 @@
 </head>
 <body>
     <div class="page-container">
-        <div class="content-wrap">
-            <div class="sidebar">
-                <div class="sidebar-content">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                        <li><a href="studies.html">Studies</a></li>
-                        <li><a href="code.html">Data</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="studies.html">Studies</a></li>
+                    <li><a href="code.html">Data</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
             </div>
+        </div>
+        <div class="content-wrap">
             <div class="main-content">
                 <h1>Besterman Lab</h1>
-                <h2> Precision Pediatric Mental Health Research</h2>
+                <h2>Precision Pediatric Mental Health Research</h2>
                 <div class="image-container">
                     <div class="word-cloud">
                         <img src="images/word-cloud2.png" alt="Word Cloud">
@@ -170,9 +170,9 @@
                     <div class="carousel">
                         <img src="images/nicole.png" alt="Nicole" class="carousel-image active">
                         <img src="images/rfx3.png" alt="RFX3" class="carousel-image">
-                        <img src="images/sksprotein.png" alt="SKS Protein" class="carousel-image">
-                        <img src="images/catatoniaflow.png" alt="Catatonia Flow" class="carousel-image">
-                        <img src="images/sks.png" alt="SKS" class="carousel-image">
+                        <img src="images/sksprotein.png" alt="SKS Protein" the="carousel-image">
+                        <img src="images/catatoniaflow.png" alt="Catatonia Flow" the="carousel-image">
+                        <img src="images/sks.png" alt="SKS" the="carousel-image">
                     </div>
                 </div>
                 <p class="main-text">We push the boundaries of genomics science and emerging technologies to transform the understanding and treatment of severe pediatric mental health disorders</p>
