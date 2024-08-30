@@ -9,12 +9,11 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            height: 100%;
-            overflow: hidden;
+            overflow: auto;
         }
         .container {
             display: flex;
-            height: 100vh;
+            min-height: 100vh;
         }
         .sidebar {
             width: 250px;
@@ -76,9 +75,8 @@
             flex-grow: 1;
             padding: 20px;
             background-color: #fff;
-            margin-left: 250px;
+            margin-left: 250px; /* Adjust to the width of the sidebar */
             overflow-y: auto;
-            height: 100vh;
         }
         .main-content h1 {
             color: #1e5288;
@@ -96,8 +94,7 @@
             color: #ffffff;
             text-align: center;
             padding: 1rem;
-            width: calc(100% - 250px);
-            margin-left: 250px;
+            width: 100%;
         }
     </style>
 </head>
