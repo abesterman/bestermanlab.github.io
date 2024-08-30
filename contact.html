@@ -10,17 +10,21 @@
             padding: 0;
             font-family: Arial, sans-serif;
             height: 100%;
+            overflow: hidden;
         }
         .container {
             display: flex;
-            min-height: 100vh;
+            height: 100vh;
         }
         .sidebar {
             width: 250px;
             background-color: #f0f0f0;
             box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
         }
         .sidebar::before {
             content: "";
@@ -72,7 +76,9 @@
             flex-grow: 1;
             padding: 20px;
             background-color: #fff;
+            margin-left: 250px;
             overflow-y: auto;
+            height: 100vh;
         }
         .main-content h1 {
             color: #1e5288;
@@ -101,7 +107,8 @@
             color: #ffffff;
             text-align: center;
             padding: 1rem;
-            width: 100%;
+            width: calc(100% - 250px);
+            margin-left: 250px;
         }
     </style>
 </head>
@@ -111,7 +118,7 @@
             <div class="sidebar-content">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="teams.html">Teams</a></li>
+                    <li><a href="team.html">Team</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="studies.html">Studies</a></li>
                     <li><a href="code.html">Data</a></li>
