@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Besterman Lab - Contact</title>
+    <title>Team - Besterman Lab</title>
     <style>
         body, html {
             margin: 0;
@@ -43,6 +43,7 @@
             position: relative;
             z-index: 2;
             height: 100%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -86,21 +87,30 @@
             margin-top: 0;
             margin-bottom: 20px;
         }
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+        .section {
+            margin-bottom: 30px;
         }
-        .building-image {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        .address, .email-info {
-            font-size: 1.1em;
-            line-height: 1.6;
+        .section h2 {
+            color: #1e5288;
+            font-size: 1.5em;
             margin-bottom: 10px;
+        }
+        .profile {
+            text-align: center;
+        }
+        .profile img {
+            width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .profile p {
+            font-size: 1em;
+            line-height: 1.5;
+            margin: 5px 0;
+        }
+        .profile a {
+            color: #1e5288;
+            text-decoration: none;
         }
         footer {
             background-color: #1e5288;
@@ -127,11 +137,26 @@
             </div>
         </div>
         <div class="main-content">
-            <h1>Contact</h1>
-            <div class="contact-info">
-                <img src="images/7910frost.jpg" alt="7910 Frost Street Building" class="building-image">
-                <p class="address">7910 Frost Street, Suite 300, San Diego, CA 92123</p>
-                <p class="email-info">For questions about research studies, please contact Corrine Blucher at: <a href="mailto:cblucher@rchsd.org">cblucher@rchsd.org</a></p>
+            <h1>Team</h1>
+            <div class="section" id="principal-investigator">
+                <h2>Principal Investigator</h2>
+                <div class="profile">
+                    <img src="images/aaron.png" alt="Aaron Besterman, MD">
+                    <p>Aaron Besterman, MD</p>
+                    <p>Health Sciences Associate Clinical Professor, UCSD Department of Psychiatry</p>
+                    <p>Clinical Investigator, Rady Children's Institute for Genomic Medicine</p>
+                    <p>Attending Psychiatrist, Rady Children's Hospital San Diego</p>
+                    <p><a href="mailto:abesterman@health.ucsd.edu">abesterman@health.ucsd.edu</a></p>
+                </div>
+            </div>
+            <div class="section" id="clinical-research-coordinators">
+                <h2>Clinical Research Coordinators</h2>
+                <div class="profile">
+                    <img src="images/abbey.png" alt="Abbey Albertazzi">
+                    <p>Abbey Albertazzi</p>
+                    <p>While earning her bachelor's and master's degrees in psychology, at SDSU, she developed a strong background in neuropsychological research. She is now focused on expanding her experience coordinating multiple projects with different clinical populations, while incorporating her interests in cognitive and behavioral health and medicine.</p>
+                    <p><a href="mailto:aalbertazzi@rchsd.org">aalbertazzi@rchsd.org</a></p>
+                </div>
             </div>
         </div>
     </div>
