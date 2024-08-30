@@ -19,8 +19,11 @@
             width: 250px;
             background-color: #f0f0f0;
             box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
         }
         .sidebar::before {
             content: "";
@@ -72,7 +75,7 @@
             flex-grow: 1;
             padding: 20px;
             background-color: #fff;
-            overflow-y: auto;
+            margin-left: 250px;
         }
         .main-content h1 {
             color: #1e5288;
@@ -100,7 +103,8 @@
             color: #ffffff;
             text-align: center;
             padding: 1rem;
-            width: 100%;
+            width: calc(100% - 250px);
+            margin-left: 250px;
         }
     </style>
 </head>
