@@ -125,12 +125,24 @@
             color: #1e5288;
             text-decoration: none;
         }
+        .alumni-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .alumni-list li {
+            margin-bottom: 10px;
+        }
         footer {
             background-color: #1e5288;
             color: #ffffff;
             text-align: center;
             padding: 1rem;
             width: 100%;
+        }
+        @media (max-width: 768px) {
+            .profile {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -182,22 +194,36 @@
                 </div>
                 <div class="section" id="fellows-postdocs">
                     <h2>Residents, Fellows & Postdocs</h2>
-                    <!-- Add fellows profiles here -->
+                    <div class="profile single">
+                        <img src="images/jackie.png" alt="Jacqueline Tasarz, M.D.">
+                        <p>Jacqueline Tasarz, M.D.</p>
+                        <p>Jackie completed her MD at UC Davis and she is currently a psychiatry resident in the community track of the UCSD Psychiatry Residency Program. She plans to pursue a fellowship in Child and Adolescent Psychiatry after residency. Her clinical interests include community psychiatry, severe mental illness, and autism spectrum disorder.</p>
+                    </div>
                 </div>
                 <div class="section" id="students">
                     <h2>Students</h2>
-                    <div class="profile single">
-                        <img src="images/harman.png" alt="Harman Brah">
-                        <p>Harman Brah, M.D.</p>
-                        <p>He graduated Phi Beta Kappa from Loyola Marymount University and earned his medical degree from the University of California, San Diego School of Medicine. He has research experience in pharmaceutical chemistry, structural biophysics, and pharmacodynamics. His current interests include the metabolic, genetic, and immunologic basis of psychosis, as well as the use of large language models (LLMs) in psychiatry. He is currently a research track resident at the UCLA/VA Psychiatry Residency Program.</p>
+                    <div class="profile-container">
+                        <div class="profile">
+                            <img src="images/harman.png" alt="Harman Brah">
+                            <p>Harman Brah, M.D.</p>
+                            <p>He graduated Phi Beta Kappa from Loyola Marymount University and earned his medical degree from the University of California, San Diego School of Medicine. He has research experience in pharmaceutical chemistry, structural biophysics, and pharmacodynamics. His current interests include the metabolic, genetic, and immunologic basis of psychosis, as well as the use of large language models (LLMs) in psychiatry. He is currently a research track resident at the UCLA/VA Psychiatry Residency Program.</p>
+                        </div>
+                        <div class="profile">
+                            <img src="images/veronica.png" alt="Veronica Gandara">
+                            <p>Veronica Gandara, B.S.</p>
+                            <p>She is currently a medical student at California Northstate University, College of Medicine, where she is diligently preparing for a career in psychiatry. Driven by a lifelong passion for mental health, she is actively involved in several research projects within the field, demonstrating her commitment to advancing psychiatric care.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="section" id="alumni">
                     <h2>Alumni</h2>
-                    Nicole Wong, M.D., Currently a psychiatry resident at Johns Hopkins Univeristy
-                    David Adams, M.D., Currently a psychiatry resident at UCLA
-                    Daniel Lowet, M.D., Curretly a psychiatry resident at Cornell
-                    Joshua Sadik, M.D., Currntly an anesthesiology resident at UCLA
+                    <ul class="alumni-list">
+                        <li>Nicole Wong, M.D., Currently a psychiatry resident at Johns Hopkins University</li>
+                        <li>David Adams, M.D., Currently a psychiatry resident at UCLA</li>
+                        <li>Kristen Kim, M.D., Currently is a practicing child & adolescent psychiatrist at Vista Hill and in private practice in San Diego</li>
+                        <li>Daniel Lowet, M.D., Currently a psychiatry resident at Cornell</li>
+                        <li>Joshua Sadik, M.D., Currently an anesthesiology resident at UCLA</li>
+                    </ul>
                 </div>
             </div>
         </div>
