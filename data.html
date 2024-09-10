@@ -4,8 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Besterman Lab - Data & Code</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .content-wrap {
+            flex: 1;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f0f0f0;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/helix.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        .sidebar-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+        .sidebar ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 21.84px;
+            font-weight: bold;
+            display: block;
+            padding: 5px 0;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #fff;
+            margin-left: 250px;
+            transition: margin-left 0.3s ease-in-out;
+        }
+        .main-content h1 {
+            color: #1e5288;
+            font-size: 2.5em;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
         .data-section {
             background-color: #f6f8fa;
             border: 1px solid #e1e4e8;
@@ -23,41 +108,116 @@
             border-radius: 6px;
             font-weight: bold;
         }
+        pre {
+            background-color: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        footer {
+            background-color: #1e5288;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1001;
+            background: #1e5288;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .main-content h1 {
+                font-size: 2em;
+            }
+            .data-section {
+                padding: 15px;
+            }
+            .data-link {
+                padding: 8px 16px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Include your existing navigation here -->
-        <div class="main-content">
-            <h1>Data & Code Repository</h1>
-            <p>Welcome to the Besterman Lab data and code repository. Here you can find datasets and analysis scripts from our published research projects.</p>
-            
-            <div class="data-section">
-                <h2>Available Datasets</h2>
-                <ul>
-                    <li><a href="data/project-a">Project A: Description of dataset</a></li>
-                    <li><a href="data/project-b">Project B: Description of dataset</a></li>
-                    <!-- Add more projects as needed -->
-                </ul>
+        <button class="menu-toggle">☰</button>
+        <div class="content-wrap">
+            <div class="sidebar">
+                <div class="sidebar-content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="studies.html">Studies</a></li>
+                        <li><a href="code.html">Data</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <h2>How to Use</h2>
-            <ol>
-                <li>Click on the project link you're interested in.</li>
-                <li>Download the data files and associated code.</li>
-                <li>Refer to the README file in each project folder for specific usage instructions.</li>
-            </ol>
-
-            <h2>Citation</h2>
-            <p>If you use our data or code in your research, please cite the relevant publication and our GitHub repository. For example:</p>
-            <pre>
+            <div class="main-content">
+                <h1>Data & Code Repository</h1>
+                <p>Welcome to the Besterman Lab data and code repository. Here you can find datasets and analysis scripts from our published research projects.</p>
+                
+                <div class="data-section">
+                    <h2>Available Datasets</h2>
+                    <ul>
+                        <li><a href="data/project-a">Project A: Description of dataset</a></li>
+                        <li><a href="data/project-b">Project B: Description of dataset</a></li>
+                        <!-- Add more projects as needed -->
+                    </ul>
+                </div>
+                <h2>How to Use</h2>
+                <ol>
+                    <li>Click on the project link you're interested in.</li>
+                    <li>Download the data files and associated code.</li>
+                    <li>Refer to the README file in each project folder for specific usage instructions.</li>
+                </ol>
+                <h2>Citation</h2>
+                <p>If you use our data or code in your research, please cite the relevant publication and our GitHub repository. For example:</p>
+                <pre>
 Besterman, A. D., et al. (2024). Project Name. GitHub repository, https://github.com/abesterman/bestermanlab.github.io/tree/main/data/project-name
-            </pre>
-
-            <h2>Contact</h2>
-            <p>If you have any questions about the data or code, please open an issue on our GitHub repository or contact us directly at [your email].</p>
+                </pre>
+                <h2>Contact</h2>
+                <p>If you have any questions about the data or code, please open an issue on our GitHub repository or contact us directly at [your email].</p>
+            </div>
         </div>
+        <footer>
+            <p>&copy; 2024 Besterman Lab. All rights reserved.</p>
+        </footer>
     </div>
-    <!-- Include your existing footer here -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const mainContent = document.querySelector('.main-content');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mainContent.style.marginLeft = sidebar.classList.contains('active') ? '250px' : '0';
+        });
+    </script>
 </body>
 </html>
