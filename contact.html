@@ -9,11 +9,16 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            overflow: auto;
+            overflow-x: hidden;
         }
         .container {
             display: flex;
             min-height: 100vh;
+            flex-direction: column;
+        }
+        .content-wrap {
+            flex: 1;
+            display: flex;
         }
         .sidebar {
             width: 250px;
@@ -24,6 +29,8 @@
             left: 0;
             bottom: 0;
             overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
         }
         .sidebar::before {
             content: "";
@@ -75,9 +82,9 @@
             flex-grow: 1;
             padding: 20px;
             background-color: #fff;
-            overflow-y: auto;
-            margin-left: 250px; /* Adjust to the width of the sidebar */
-            min-height: calc(100vh - 3rem); /* Adjust to footer height */
+            margin-left: 250px;
+            transition: margin-left 0.3s ease-in-out;
+            min-height: calc(100vh - 3rem);
         }
         .main-content h1 {
             color: #1e5288;
@@ -108,33 +115,81 @@
             padding: 1rem;
             width: 100%;
         }
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1001;
+            background: #1e5288;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .main-content h1 {
+                font-size: 2em;
+            }
+            .address, .email-info {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <div class="sidebar-content">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="studies.html">Studies</a></li>
-                    <li><a href="code.html">Data</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
+        <button class="menu-toggle">☰</button>
+        <div class="content-wrap">
+            <div class="sidebar">
+                <div class="sidebar-content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="studies.html">Studies</a></li>
+                        <li><a href="code.html">Data</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-content">
+                <h1>Contact</h1>
+                <div class="contact-info">
+                    <img src="images/7910frost.jpg" alt="7910 Frost Street Building" class="building-image">
+                    <p class="address">7910 Frost Street, Suite 300, San Diego, CA 92123</p>
+                    <p class="email-info">For questions about research studies, please contact Corrine Blucher at: <a href="mailto:cblucher@rchsd.org">cblucher@rchsd.org</a></p>
+                </div>
             </div>
         </div>
-        <div class="main-content">
-            <h1>Contact</h1>
-            <div class="contact-info">
-                <img src="images/7910frost.jpg" alt="7910 Frost Street Building" class="building-image">
-                <p class="address">7910 Frost Street, Suite 300, San Diego, CA 92123</p>
-                <p class="email-info">For questions about research studies, please contact Corrine Blucher at: <a href="mailto:cblucher@rchsd.org">cblucher@rchsd.org</a></p>
-            </div>
-        </div>
+        <footer>
+            <p>&copy; 2024 Besterman Lab. All rights reserved.</p>
+        </footer>
     </div>
-    <footer>
-        <p>&copy; 2024 Besterman Lab. All rights reserved.</p>
-    </footer>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const mainContent = document.querySelector('.main-content');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mainContent.style.marginLeft = sidebar.classList.contains('active') ? '250px' : '0';
+        });
+    </script>
 </body>
 </html>
