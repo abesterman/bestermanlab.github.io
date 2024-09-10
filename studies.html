@@ -10,10 +10,16 @@
             padding: 0;
             font-family: Arial, sans-serif;
             height: 100%;
+            overflow-x: hidden;
         }
         .container {
             display: flex;
             min-height: 100vh;
+            flex-direction: column;
+        }
+        .content-wrap {
+            flex: 1;
+            display: flex;
         }
         .sidebar {
             width: 250px;
@@ -24,6 +30,8 @@
             left: 0;
             bottom: 0;
             overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
         }
         .sidebar::before {
             content: "";
@@ -76,6 +84,7 @@
             padding: 20px;
             background-color: #fff;
             margin-left: 250px;
+            transition: margin-left 0.3s ease-in-out;
         }
         .main-content h1 {
             color: #1e5288;
@@ -113,77 +122,124 @@
             color: #ffffff;
             text-align: center;
             padding: 1rem;
-            width: calc(100% - 250px);
-            margin-left: 250px;
+            width: 100%;
+        }
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1001;
+            background: #1e5288;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .main-content h1 {
+                font-size: 2em;
+            }
+            .study h2 {
+                font-size: 1.3em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <div class="sidebar-content">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="studies.html">Studies</a></li>
-                    <li><a href="code.html">Data</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
+        <button class="menu-toggle">☰</button>
+        <div class="content-wrap">
+            <div class="sidebar">
+                <div class="sidebar-content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="studies.html">Studies</a></li>
+                        <li><a href="code.html">Data</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-content">
+                <h1>Our Studies</h1>
+
+                <div class="study">
+                    <h2>Mental Health Crises in Youth with Intellectual and Developmental Disabilities</h2>
+                    <p>Studying clinical, psychosocial, and genetic factors associated with mental health crises in youth with IDDs.</p>
+                    <a href="https://clinicaltrials.gov/study/NCT05471232?term=besterman&rank=2" target="_blank" class="clinical-trial-info">Clinical Trial Information</a>
+                    
+                    <span class="recruiting">Actively Recruiting</span>
+                    <p>For further information please contact Corrine Blucher: Phone: (858) 576-1700x221632 | Email: <a href="mailto:cblucher@rchsd.org">cblucher@rchsd.org</a></p>
+                </div>
+
+                <div class="study">
+                    <h2>Multi-omics of Early-Onset Psychosis</h2>
+                    <p>Using whole genome sequencing in collaboration with RCIGM and autoantibody profiling in collaboration with Dr. Christopher Bartley at <a href="https://www.nimh.nih.gov/research/research-conducted-at-nimh/principal-investigators/christopher-m-bartley" target="_blank">Translational Immunopsychiatry Unit (TIU) @ NIMH</a> to study immunogenomic origins of psychosis in youth.</p>
+                    <a href="https://clinicaltrials.gov/study/NCT05457140?term=besterman&rank=1" target="_blank" class="clinical-trial-info">Clinical Trial Information</a>
+                    
+                    <span class="recruiting">Actively Recruiting</span>
+                    <p>For further information please contact Corrine Blucher: Phone: (858) 576-1700x221632 | Email: <a href="mailto:cblucher@rchsd.org">cblucher@rchsd.org</a></p>
+                </div>
+
+                <div class="study">
+                    <h2>Immunogenomics of Pediatric Catatonia</h2>
+                    <p>Using whole genome sequencing in collaboration with RCIGM and autoantibody profiling in collaboration with Dr. Christopher Bartley at <a href="https://www.nimh.nih.gov/research/research-conducted-at-nimh/principal-investigators/christopher-m-bartley" target="_blank">Translational Immunopsychiatry Unit (TIU) @ NIMH</a> to study immunogenomic origins of catatonia in youth.</p>
+                   <p>For further information please contact Corrine Blucher: Phone: (858) 576-1700x221632 | Email: <a href="mailto:cblucher@rchsd.org">cblucher@rchsd.org</a></p>
+                </div>
+
+                <div class="study">
+                    <h2>Feasibility of Wearable Devices in Autism Spectrum Disorders</h2>
+                    <p>With <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=510" target="_blank">Dr. Benjamin Smarr</a> @ UCSD Bioengineering, evaluating the feasibility of various wearable devices for youth with ASD</p>
+                    <p>For further information please contact Abbey Albertazzi: Phone: (858) 576-1700x221939 | Email: <a href="mailto:aalbertazzi@rchsd.org">aalbertazzi@rchsd.org</a></p>
+                </div>
+
+                <div class="study">
+                    <h2>The Microbiome in Adolescent Antidepressant Treatment Response</h2>
+                    <p>With <a href="https://knightlab.ucsd.edu/" target="_blank">Dr. Rob Knight</a>, researching the role of the gut microbiome in treatment response to Prozac for youth with Depression</p>
+                   <p>For further information please contact Abbey Albertazzi: Phone: (858) 576-1700x221939 | Email: <a href="mailto:aalbertazzi@rchsd.org">aalbertazzi@rchsd.org</a></p>
+                </div>
+
+                <div class="study">
+                    <h2>Immunophenotyping of Down Syndrome Regression Disorder</h2>
+                    <p>Collaborating on a study led by <a href="https://www.chla.org/profile/jonathan-d-santoro-md" target="_blank">Dr. Jonathan Santoro</a> @ CHLA, <a href="https://www.nimh.nih.gov/research/research-conducted-at-nimh/scientific-director/office-of-clinical-director/genalynne-c-mooneyham-md-ms" target="_blank">Dr. Gena Mooneyham</a> and Dr. Christopher Bartley @NIH examining the role of neuroinflammation in Down Syndrome Regression Disorder</p>
+                </div>
+
+                <div class="study">
+                    <h2>Clinical Legal and Ethical Considerations in Pediatric Threat Assessment</h2>
+                    <p>In collaboration with <a href="https://anthropology.ucsd.edu/people/faculty/faculty-profiles/Bonnie%20N.%20Kaiser.html" target="_blank">Dr. Bonnie Kaiser</a> @ UCSD Anthropology and <a href="https://www.sandiego.edu/law/about/biography.php?profile_id=3332" target="_blank">Dr. Dov Fox</a> and USD School of Law, we are using mixed-method surveying to assess how psychiatrists make clinical decisions about threat assessment in youth</p>
+                </div>
             </div>
         </div>
-        <div class="main-content">
-            <h1>Our Studies</h1>
-
-            <div class="study">
-                <h2>Mental Health Crises in Youth with Intellectual and Developmental Disabilities</h2>
-                <p>Studying clinical, psychosocial, and genetic factors associated with mental health crises in youth with IDDs.</p>
-                <a href="https://clinicaltrials.gov/study/NCT05471232?term=besterman&rank=2" target="_blank" class="clinical-trial-info">Clinical Trial Information</a>
-                
-                <span class="recruiting">Actively Recruiting</span>
-                <p>For further information please contact Corrine Blucher: Phone: (858) 576-1700x221632 | Email: <a href="mailto:cblucher@rchsd.org">cblucher@rchsd.org</a></p>
-            </div>
-
-            <div class="study">
-                <h2>Multi-omics of Early-Onset Psychosis</h2>
-                <p>Using whole genome sequencing in collaboration with RCIGM and autoantibody profiling in collaboration with Dr. Christopher Bartley at <a href="https://www.nimh.nih.gov/research/research-conducted-at-nimh/principal-investigators/christopher-m-bartley" target="_blank">Translational Immunopsychiatry Unit (TIU) @ NIMH</a> to study immunogenomic origins of psychosis in youth.</p>
-                <a href="https://clinicaltrials.gov/study/NCT05457140?term=besterman&rank=1" target="_blank" class="clinical-trial-info">Clinical Trial Information</a>
-                
-                <span class="recruiting">Actively Recruiting</span>
-                <p>For further information please contact Corrine Blucher: Phone: (858) 576-1700x221632 | Email: <a href="mailto:cblucher@rchsd.org">cblucher@rchsd.org</a></p>
-            </div>
-
-            <div class="study">
-                <h2>Immunogenomics of Pediatric Catatonia</h2>
-                <p>Using whole genome sequencing in collaboration with RCIGM and autoantibody profiling in collaboration with Dr. Christopher Bartley at <a href="https://www.nimh.nih.gov/research/research-conducted-at-nimh/principal-investigators/christopher-m-bartley" target="_blank">Translational Immunopsychiatry Unit (TIU) @ NIMH</a> to study immunogenomic origins of catatonia in youth.</p>
-               <p>For further information please contact Corrine Blucher: Phone: (858) 576-1700x221632 | Email: <a href="mailto:cblucher@rchsd.org">cblucher@rchsd.org</a></p>
-            </div>
-
-            <div class="study">
-                <h2>Feasibility of Wearable Devices in Autism Spectrum Disorders</h2>
-                <p>With <a href="https://jacobsschool.ucsd.edu/faculty/profile?id=510" target="_blank">Dr. Benjamin Smarr</a> @ UCSD Bioengineering, evaluating the feasibility of various wearable devices for youth with ASD</p>
-                <p>For further information please contact Abbey Albertazzi: Phone: (858) 576-1700x221939 | Email: <a href="mailto:aalbertazzi@rchsd.org">aalbertazzi@rchsd.org</a></p>
-            </div>
-
-            <div class="study">
-                <h2>The Microbiome in Adolescent Antidepressant Treatment Response</h2>
-                <p>With <a href="https://knightlab.ucsd.edu/" target="_blank">Dr. Rob Knight</a>, researching the role of the gut microbiome in treatment response to Prozac for youth with Depression</p>
-               <p>For further information please contact Abbey Albertazzi: Phone: (858) 576-1700x221939 | Email: <a href="mailto:aalbertazzi@rchsd.org">aalbertazzi@rchsd.org</a></p>
-            </div>
-
-            <div class="study">
-                <h2>Immunophenotyping of Down Syndrome Regression Disorder</h2>
-                <p>Collaborating on a study led by <a href="https://www.chla.org/profile/jonathan-d-santoro-md" target="_blank">Dr. Jonathan Santoro</a> @ CHLA, <a href="https://www.nimh.nih.gov/research/research-conducted-at-nimh/scientific-director/office-of-clinical-director/genalynne-c-mooneyham-md-ms" target="_blank">Dr. Gena Mooneyham</a> and Dr. Christopher Bartley @NIH examining the role of neuroinflammation in Down Syndrome Regression Disorder</p>
-            </div>
-
-            <div class="study">
-                <h2>Clinical Legal and Ethical Considerations in Pediatric Threat Assessment</h2>
-                <p>In collaboration with <a href="https://anthropology.ucsd.edu/people/faculty/faculty-profiles/Bonnie%20N.%20Kaiser.html" target="_blank">Dr. Bonnie Kaiser</a> @ UCSD Anthropology and <a href="https://www.sandiego.edu/law/about/biography.php?profile_id=3332" target="_blank">Dr. Dov Fox</a> and USD School of Law, we are using mixed-method surveying to assess how psychiatrists make clinical decisions about threat assessment in youth</p>
-            </div>
-        </div>
+        <footer>
+            <p>&copy; 2024 Besterman Lab. All rights reserved.</p>
+        </footer>
     </div>
-    <footer>
-        <p>&copy; 2024 Besterman Lab. All rights reserved.</p>
-    </footer>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const mainContent = document.querySelector('.main-content');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mainContent.style.marginLeft = sidebar.classList.contains('active') ? '250px' : '0';
+        });
+    </script>
 </body>
 </html>
