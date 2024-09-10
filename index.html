@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            overflow: auto;
+            overflow-x: hidden;
         }
         .page-container {
             display: flex;
@@ -19,6 +19,7 @@
         .content-wrap {
             flex: 1;
             display: flex;
+            flex-direction: row;
         }
         .sidebar {
             width: 250px;
@@ -27,6 +28,7 @@
             position: fixed;
             height: 100vh;
             overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
         }
         .sidebar::before {
             content: "";
@@ -80,6 +82,7 @@
             background-color: #fff;
             overflow-y: auto;
             margin-left: 250px; /* Equal to the width of the sidebar */
+            transition: margin-left 0.3s ease-in-out;
         }
         .main-content h1 {
             color: #1e5288;
@@ -96,15 +99,18 @@
         }
         .image-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             width: 100%;
-            height: 400px;
             margin-bottom: 20px;
             padding-top: 0.5in;
         }
-        .carousel {
+        .carousel, .word-cloud {
             width: 48%;
-            height: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        .carousel {
             position: relative;
             overflow: hidden;
         }
@@ -118,10 +124,6 @@
         }
         .carousel-image.active {
             opacity: 1;
-        }
-        .word-cloud {
-            width: 48%;
-            height: 100%;
         }
         .word-cloud img {
             width: 100%;
@@ -143,9 +145,56 @@
             padding: 1rem;
             width: 100%;
         }
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            background: #1e5288;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                z-index: 1000;
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .image-container {
+                flex-direction: column;
+            }
+            .carousel, .word-cloud {
+                width: 100%;
+                height: 300px;
+            }
+            .main-content h1 {
+                font-size: 2em;
+            }
+            .main-content h2 {
+                font-size: 1.2em;
+                padding-top: 0.3in;
+            }
+            .main-text {
+                font-size: 1.1em;
+            }
+        }
     </style>
 </head>
 <body>
+    <button class="menu-toggle">☰</button>
     <div class="page-container">
         <div class="sidebar">
             <div class="sidebar-content">
@@ -162,7 +211,7 @@
         <div class="content-wrap">
             <div class="main-content">
                 <h1>Besterman Lab</h1>
-                <h2>Pediatric Precision Psychiatry | Clincal & Translational Genomics | Mulit-Omics </h2>
+                <h2>Pediatric Precision Psychiatry | Clinical & Translational Genomics | Multi-Omics </h2>
                 <div class="image-container">
                     <div class="word-cloud">
                         <img src="images/word-cloud2.png" alt="Word Cloud">
@@ -193,6 +242,16 @@
         }
 
         setInterval(showNextImage, 5000); // Change image every 5 seconds
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const mainContent = document.querySelector('.main-content');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mainContent.style.marginLeft = sidebar.classList.contains('active') ? '250px' : '0';
+        });
     </script>
 </body>
 </html>
